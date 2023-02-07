@@ -7,12 +7,14 @@ x = 10 ** -x
 
 my = (1/2)*2 ** (-(52))
 
-f1 = (np.exp(x)-1)/x
-f2 = (x/2)
-f3 = (my/np.abs(x))
 
-plt.loglog(x, np.abs(f1-1), label='|f1 - 1|')
-plt.loglog(x, (f2+f3), label='R_TOT')
+f2 = (np.exp(x)-1)/ (np.log(np.exp(x)))
+f3 = (x/2)
+f4 = (my/np.abs(x))
+
+
+plt.loglog(x, np.abs(f2-1), label='|f2- 1|')
+plt.loglog(x, (f3+f4), label='R_TOT')
 plt.legend()
 plt.xlabel('x')
 plt.ylabel('Erorr')

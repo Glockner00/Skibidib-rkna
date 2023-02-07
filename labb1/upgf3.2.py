@@ -15,12 +15,10 @@ def exp_taylor(x, n):
 
 y_true = f(x)
 
-print(y_true * 3)
-
 y_taylor = exp_taylor(x, n)  # Approximation using the Taylor series
 
 RT = np.abs(y_true-y_taylor)
-print(y_taylor * 3) 
+print(RT)
 plt.plot(x, RT, label='RT')
 plt.legend()
 plt.xlabel('x')

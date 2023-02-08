@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
 x = np.linspace(0, 16, 161)
 x = 10 ** -x
@@ -16,4 +15,5 @@ plt.loglog(x, (f3+f4), label='R_TOT')
 plt.legend()
 plt.xlabel('x')
 plt.ylabel('Erorr')
+plt.title('Beräkningsfelanalys 3.5')
 plt.show()

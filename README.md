@@ -1,3 +1,3 @@
 # TANA23
-Numerical Analysis in Python
-Bifogat är samtliga labbar under vt23 från kursen TANA23 på Linköpings universitet. 
+Numerical Analysis and computational mathematics in Python
+Assigments from TANA23 at Linköpings University.

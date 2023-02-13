@@ -7,38 +7,24 @@ x = np.linspace(-10, 10, 1000)
 
 def min_exp(x):
     S = 0.0
-    arr = x
-    for i in arr:
-        if i > 0:
-            for k in range(0, 100):
-                Tk = i**k/math.factorial(k)
-                S = S+Tk
-            return S
-        else:
-            i = -1 * i
-            for k in range(0, 100):
-                Tk = i**k/math.factorial(k)
-                S = S+Tk
-            return 1/S
+    if x > 0:
+        for k in range(0, 100):
+            Tk = x**k/math.factorial(k)
+            S = S + Tk
+        return S
+    else:
+        x = -1 * x
+        for k in range(0, 100):
+            Tk = x**k/math.factorial(k)
+            S = S + Tk
+        return 1/S
 
 
-absError = np.abs(min_exp(x) - np.exp(x))
-relError = np.abs(absError/np.exp(x))
-
-plt.plot(x, absError, label='The Absolute Error')
-plt.legend()
-plt.xlabel('x')
-plt.ylabel('Abs_Error')
-plt.title('')
+min_exp_vals = [min_exp(x_i) for x_i in x]
+np_exp_vals = [np.exp(x_j) for x_j in x]
+relError = [abs(min_exp_vals[k] - np_exp_vals[k]) for k in range(len(x))]
+plt.plot(x, relError)
 plt.show()
-
-plt.plot(x, relError, label='The Relative Error')
-plt.legend()
-plt.xlabel('x')
-plt.ylabel('Rel_Error')
-plt.title('')
-plt.show()
-
 """
 Annledningn till att vi använder exp(-x) = 1/exp(x) är :
     för x < 0 blir serien:

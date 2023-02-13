@@ -31,6 +31,9 @@ plt.ylabel('Rel_Error')
 plt.title('')
 plt.show()
 
+# grafen visar att det absoluta felet pythons egena exp(x) och defintionen av exp(x) växer för stora x respektive små x.
+# det relativa felet ökar för små x.
+
 
 
 

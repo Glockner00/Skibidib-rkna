@@ -25,13 +25,14 @@ np_exp_vals = [np.exp(x_j) for x_j in x]
 relError = [abs(min_exp_vals[k] - np_exp_vals[k]) for k in range(len(x))]
 plt.plot(x, relError)
 plt.show()
+
+
 """
 Annledningn till att vi använder exp(-x) = 1/exp(x) är :
     för x < 0 blir serien:
         exp(-x) = -f1 + f2 - f3 + f4 - ...
-
     De negativa termerna(som är väldigt små) "balanserar" ut de positiva termer 
-    (som är väldigt stora). Men eftersom att serien är finit kommer det att boli en ojämn balans.
+    (som är väldigt stora). Men eftersom att serien är finit kommer det att bli en ojämn balans.
     Det kommer bli en term som inte balansers, vilket leder till ett stort fel. Detta problem finns
     inte för för exp(x) då x>0, och vi får alltså en snabbare komvergens genom att använda 
     exp(-x) = 1 / exp(x).

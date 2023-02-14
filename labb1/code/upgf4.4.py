@@ -1,16 +1,19 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import math
 
-my = (1/2)*2**(-52)
 x_values = np.linspace(0, 1, 1000)
+my = (1/2)*2**(-52)
 
 
 def min_exp(x, n):
-    t = 0
-    for i in range(n):
-        t += (x**i)/math.factorial(i)
-    return t
+    t = 1
+    result = 1
+    # t_(k) = t_(k-1) * (x/k)
+    for k in range(1, n):
+        t *= (x/k)
+        result += t
+    return result
 
 
 def n():  # n = 18
@@ -31,7 +34,8 @@ plt.plot(x_values, np_exp_vals, label="Numpy")
 plt.legend()
 plt.show()
 
-relError = [abs(e_taylor[k] - np_exp_vals[k]) for k in range(len(x_values))]
-plt.plot(x_values, relError)
 plt.title("Relative Error")
+relError = [abs(e_taylor[k] - np_exp_vals[k]) for k in range(len(x_values))]
+plt.plot(x_values, relError, label="|taylor_exp(x) - numpy_exp(x)|")
+plt.legend()
 plt.show()

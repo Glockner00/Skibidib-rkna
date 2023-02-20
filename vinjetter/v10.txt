@@ -1,0 +1,20 @@
+Vikla krypteringsalgoritmer använder de olika lagrena?
+  Det finns två olika typer av trådlös kryptering. De heter "Stream Cipher" som konverterar text till kiffertext bit för bit.
+  Den andra typen av kryptering heter "Block cipher" it operates on fixed size blocks of data.
+
+  De mest vanliga krypteringsalgoritmerna som finns heter RC4(Stream chiper) och RC5(32/64/128 bits), DES(56 bits), 3DES(56 bits) och AES(128 bits) som alla är blockciphers.
+  Där de absolut vanligaste är RC4 och AES.
+
+  Det finns tre kända säkerhetsstandarder när det kommer till wireless security. 
+    WEP : RC4 baserad, har dock brister i säkerhet när det kommer till, Initializiation vector collision attacks, Weak key attack, reinjextion attack och bit flipping attack.
+    WPA : RC4 baserad, WPA2: AES baserad, brister : cracking the password during inital 4-way handshake (with a short password <10 characters)
+
+    
+
+
+Hur förhindrar vi intrång på ett trådlöst nätverk?
+
+
+Skillnad på vwireless och wired security?
+
+

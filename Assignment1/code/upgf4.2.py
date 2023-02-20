@@ -22,7 +22,12 @@ def min_exp(x):
 
 min_exp_vals = [min_exp(x_i) for x_i in x]
 np_exp_vals = [np.exp(x_j) for x_j in x]
-relError = [abs(min_exp_vals[k] - np_exp_vals[k]) for k in range(len(x))]
+plt.plot(x, min_exp_vals)
+plt.plot(x, np_exp_vals)
+plt.show()
+
+
+relError = [abs(min_exp_vals[k] - np_exp_vals[k])/abs(min_exp_vals[k]) for k in range(len(x))]
 plt.plot(x, relError)
 plt.show()
 

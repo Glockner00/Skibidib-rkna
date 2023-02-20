@@ -27,7 +27,7 @@ def min_exp(x, n):
             Tk = (int_x**k)/math.factorial(k)
             S = S + Tk
 
-        for k in range(0, 18):
+        for k in range(0, (n+1)):
             Tk1 = (fraction_x**k)/math.factorial(k)
             E = E + Tk1           
         return (S*E)
@@ -41,7 +41,7 @@ def min_exp(x, n):
             Tk = (int_x**k)/math.factorial(k)
             S = S + Tk
         
-        for k in range(0, 18):
+        for k in range(0, (n+1)):
             Tk1 = (fraction_x**k)/math.factorial(k)
             E = E + Tk1
 

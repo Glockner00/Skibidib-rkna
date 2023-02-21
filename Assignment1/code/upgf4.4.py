@@ -4,8 +4,6 @@ import math
 
 my = (1/2)*2**(-52)
 x = np.linspace(-10, 10, 1000)
-# e = 2.71828182845904590452353602874713527
-
 
 def value():  # n = 18
     n = 0
@@ -46,4 +44,6 @@ np_exp_vals = [np.exp(x_j) for x_j in x]
 
 relError = [abs(min_exp_vals[k] - np_exp_vals[k])/abs(np_exp_vals[k]) for k in range(len(x))]
 plt.plot(x, relError)
+plt.title("Relative Error")
+plt.legend()
 plt.show()

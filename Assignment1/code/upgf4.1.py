@@ -11,8 +11,10 @@ def min_exp(x):
         S=S+Tk
     return S
 
+
 def f(x):
     return np.exp(x)
+
 
 absError = np.abs(min_exp(x) - f(x))
 relError = np.abs(absError/f(x))

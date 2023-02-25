@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt 
+import math
 
 x = np.linspace(-2 -2, 100)
 n = 5 # number of terms in the Taylor series, max number of terms we could approximate. 

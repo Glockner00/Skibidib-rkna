@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-
 my = (1/2)*2**(-52)
 x = np.linspace(-10, 10, 1000)
 e = 2.718281828459045235360287471352662497757

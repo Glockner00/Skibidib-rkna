@@ -9,5 +9,5 @@ def funk(x):
     return f
 
 plt.plot(x, funk(x))
-plt.axhline(y=0, color='red')
+plt.plot(x, np.zeros(len(x)))
 plt.show()

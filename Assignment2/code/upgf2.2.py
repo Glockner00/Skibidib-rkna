@@ -13,3 +13,7 @@ itterations = info['nfev']
 print("Aproximationene av x: ", root[0])
 print("Funktionsvärdet: ", f_of_root[0])
 print("Antal itterationer: ", itterations)
+
+# Aproximationene av x:  1.3197811068516248
+# Funktionsvärdet:  4.440892098500626e-16
+# Antal itterationer:  7

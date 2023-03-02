@@ -8,7 +8,7 @@ my = (1/2)*2 ** (-(52))
 
 f2 = (np.exp(x)-1)/ (np.log(np.exp(x)))
 f3 = (x/2)
-f4 = (my/2)
+f4 = (7*my/2)
 
 
 plt.loglog(x, np.abs(f2-1), label='|f2 - 1|')

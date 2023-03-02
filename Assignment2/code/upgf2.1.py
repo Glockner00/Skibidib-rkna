@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 3, 1000)
+x = np.linspace(0, 3)
 
 def funk(x):
     f = np.sqrt(1+x)*np.exp(x/2)-2*np.sin(2*x)*(x+x**2)

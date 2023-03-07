@@ -1,6 +1,7 @@
 # teckenbit : 1
 # Bråkdelen : 52
 # potensdelen : 11
-# potens delen med basen 2 : 2^11 = 2048 -> 2048 / 2 = 1024(åt båda hållen) -> 1023 (speciall fall då 2^n ska va lika med noll)
-# Men om vi tar taldelen som 1.999999......999 så blir största respektive minsta talet +/- 2¹⁰²⁴
-print(2**1000000)
+# Den övre gränsen blir 1023*2 + 2 på grund av att nollan plockas bort
+# Den högsta exponenten som kan lagras som flyttal är då 1023
+
+# Det största möjliga talet blir då : max = (2-(2^-52))*(2^1023) (≃ 2^1024) = 1.7976931348623157 * 10^308

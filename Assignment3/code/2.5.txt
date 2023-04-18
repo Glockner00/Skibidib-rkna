@@ -1,0 +1,37 @@
+För att visa att |RT(h1) / RT(h2)| ≈ (h1/h2)^p utnyttjar vi uttrycket för RT:
+
+RT(h) ≈ C · h^p
+
+Där C är en konstant, h är steglängden, och p är ett heltal.
+
+Nu dividerar vi RT(h1) med RT(h2):
+
+RT(h1) / RT(h2) ≈ (C · h1^p) / (C · h2^p)
+
+Eftersom C är en konstant kan vi skriva:
+
+|RT(h1) / RT(h2)| ≈ (h1^p) / (h2^p)
+
+Vi kan omskriva detta som:
+
+|RT(h1) / RT(h2)| ≈ (h1/h2)^p
+
+Nu kan vi använda de värden vi fick för |RT(h)| för h = 1/10, h = 1/20 och h = 1/40 för att bilda kvoter som borde få värdet 2^p och bestäm därigenom p.
+
+Vi har:
+
+|RT(1/10)| = RT_10
+|RT(1/20)| = RT_20
+|RT(1/40)| = RT_40
+
+Nu bildar vi kvoten:
+
+Kvot_1 = |RT(1/10) / RT(1/20)| ≈ 2^p
+Kvot_2 = |RT(1/20) / RT(1/40)| ≈ 2^p
+
+Om vi använder de beräknade värdena för |RT(h)|, kan vi lösa för p:
+
+p ≈ log2(Kvot_1)
+p ≈ log2(Kvot_2)
+
+Eftersom teorin säger att trunkeringsfelet vid interpolation med kubiska splines är RT = |f(x) - sh(x)| ≈ C · h^4, så förväntar vi oss att p ≈ 4. Jämför det beräknade värdet av p med teorin för att se om det stämmer.

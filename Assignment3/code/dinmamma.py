@@ -6,7 +6,6 @@ import numpy as np
 import matplotlib.pyplot as pp
 from scipy.interpolate import CubicSpline
 
-#
 # Here you should define your subroutine DrawBezierCurve(). The cubic Bezier
 # curve is defined by 4 control points. The curve should interpolate P1 and P4. 
 
@@ -23,19 +22,15 @@ def DrawBezierCurve( P1,P2,P3,P4,n):
     return (1 - t.reshape(n,1))**3 * P1 + 3 * (1 - t.reshape(n,1))**2 * t.reshape(n,1) * P2 + 3 * (1 - t.reshape(n,1)) * t.reshape(n,1)**2 * P3 + t.reshape(n,1)**3 * P4
 
 
-
-#
 # Create a vector of points to use for defining straight line segments.
-#23, 20 = p1
 
 Points=np.array([ [70.0, 23.0, 23.0, 23.0,  23.0,  23.0,  23.0,  0.0,   0.0,   46.0, 46.0, 70.0] ,
                   [ 4.0,  0.0, 20.0, 35.0, 107.0, 125.0, 195.0, 213.0, 222.0, 225.0, 28.0, 13.0] ])
 
-#
+
 # Create a matrix that can be used to store the control points for the 
 # Bezi'er curves. In the exercise you will successively add more points
 # into this matrix.
-#
 
 Control=np.array([ [ 0.0 ] , 
                    [ 0.0 ] ])
@@ -52,28 +47,30 @@ P6 = [10, 213]
 P7 = [23, 213]
 P8 = [23, 195]
 
+#------inre mage jao--------
 # segment 3
 P9 = [23, 107]
-P10 = [10, 107]
-P11 = [-10, 95]
+P10 = [10, 135]
+P11 = [-10, 110]
 P12 = [-10, 71]
 
 # segment 4
 P13 = [-10, 71]
-P14 = [-10, 59]
-P15 = [10, 35]
+P14 = [-10, 32]
+P15 = [10, 0]
 P16 = [23, 35]
 
+#-------yttrex magen jao kebab -- -- - -- 
 # segment 5
 P17 = [23, 125]
-P18 = [0, 125]
-P19 = [-20, 93]
-P20 = [-20, 71]
+P18 = [0, 160]
+P19 = [-17, 105]
+P20 = [-17, 71]
 
 # segment 6
-P21 = [-20, 71]
-P22 = [-20, 59]
-P23 = [0, 20]
+P21 = [-17, 71]
+P22 = [-17, 40]
+P23 = [0, -25]
 P24 = [23, 20]
 
 
@@ -84,6 +81,8 @@ pp.plot(DrawBezierCurve(P9, P10, P11, P12, 100)[:, 0], DrawBezierCurve(P9, P10, 
 pp.plot(DrawBezierCurve(P13, P14, P15, P16, 100)[:, 0], DrawBezierCurve(P13, P14, P15, P16, 100)[:, 1])
 pp.plot(DrawBezierCurve(P17, P18, P19, P20, 100)[:, 0], DrawBezierCurve(P17, P18, P19, P20, 100)[:, 1])
 pp.plot(DrawBezierCurve(P21, P22, P23, P24, 100)[:, 0], DrawBezierCurve(P21, P22, P23, P24, 100)[:, 1])
+
+# pp.plot(DrawBezierCurve(P25, P26, P27, P28, 100)[:, 0], DrawBezierCurve(P25, P26, P27, P28, 100)[:, 1])
 # Code that can be used to cerate an "italic style" d. 
 # Points[0,:]=Points[0,:]+0.07*Points[1,:]
 # Control[0,:]=Control[0,:]+0.07*Control[1,:]

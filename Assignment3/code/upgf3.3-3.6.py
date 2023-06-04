@@ -32,8 +32,8 @@ Points=np.array([ [70.0, 23.0, 23.0, 23.0,  23.0,  23.0,  23.0,  0.0,   0.0,   4
 # Bezi'er curves. In the exercise you will successively add more points
 # into this matrix.
 
-Control=np.array([ [ 0.0 ] , 
-                   [ 0.0 ] ])
+Control=np.array([ [ 46, 46, 60, 70, 0, 10, 23, 23, 23, 10, -10, -10, -10, -10, 10, 23, 23, 0, -17, -17, -17, -17, 0 , 23] , 
+                   [ 28, 12, 10 ,13, 213, 213, 213, 195, 107, 135, 110, 71, 71, 32, 0, 35, 125, 160, 105, 71, 71, 40, -25, 20] ])
 
 # segment 1
 P1 = [46, 28]
@@ -47,7 +47,7 @@ P6 = [10, 213]
 P7 = [23, 213]
 P8 = [23, 195]
 
-#------inre mage jao--------
+#------inre mage --------
 # segment 3
 P9 = [23, 107]
 P10 = [10, 135]
@@ -60,7 +60,7 @@ P14 = [-10, 32]
 P15 = [10, 0]
 P16 = [23, 35]
 
-#-------yttrex magen jao kebab -- -- - -- 
+#-------yttre magen -- -- - -- 
 # segment 5
 P17 = [23, 125]
 P18 = [0, 160]
@@ -82,6 +82,8 @@ pp.plot(DrawBezierCurve(P13, P14, P15, P16, 100)[:, 0], DrawBezierCurve(P13, P14
 pp.plot(DrawBezierCurve(P17, P18, P19, P20, 100)[:, 0], DrawBezierCurve(P17, P18, P19, P20, 100)[:, 1])
 pp.plot(DrawBezierCurve(P21, P22, P23, P24, 100)[:, 0], DrawBezierCurve(P21, P22, P23, P24, 100)[:, 1])
 
+
+
 # pp.plot(DrawBezierCurve(P25, P26, P27, P28, 100)[:, 0], DrawBezierCurve(P25, P26, P27, P28, 100)[:, 1])
 # Code that can be used to cerate an "italic style" d. 
 # Points[0,:]=Points[0,:]+0.07*Points[1,:]
@@ -89,10 +91,11 @@ pp.plot(DrawBezierCurve(P21, P22, P23, P24, 100)[:, 0], DrawBezierCurve(P21, P22
 
 # Now draw the line segments of the 'd'
 
-pp.plot( Points[0, [11,0,1,2] ],Points[1, [11,0,1,2] ],'k', color = "red" )
-pp.plot( Points[0, [3,4] ], Points[1, [3,4] ],'k', color = "blue")
-pp.plot( Points[0, [5,6] ], Points[1, [5,6] ],'k', color = "green")
-pp.plot( Points[0, [7,8,9,10] ], Points[1, [7,8,9,10] ],'k', color = "black")
+
+pp.plot( Points[0, [11,0,1,2] ],Points[1, [11,0,1,2] ],'k')
+pp.plot( Points[0, [3,4] ], Points[1, [3,4] ],'k')
+pp.plot( Points[0, [5,6] ], Points[1, [5,6] ],'k')
+pp.plot( Points[0, [7,8,9,10] ], Points[1, [7,8,9,10] ],'k')
 
 pp.xlim([-70.0,80.0])
 pp.ylim([-10.0,250.0])
@@ -105,8 +108,6 @@ pp.show()
 # a subroutine call DrawBezierCurve(P1,P2,P3,P4)
 
 # Finally we set the proper axis-limits and make the plot visible.
-
-# pp.set_aspect('equal', 'box')
 # pp.xlim([-70.0,80.0])
 # pp.ylim([-10.0,250.0])
 # pp.show()

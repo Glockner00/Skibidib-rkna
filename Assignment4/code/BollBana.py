@@ -15,9 +15,9 @@ def BollODE( S , t ):
     rho=1.2    # Luftensdensitet [kg/m^3]
     A=0.0375   # Tv�rsnittsarean [m^2]
     Cd=0.14    # Luftmotst�ndskoefficient.
-    Cl=0.16    # Koefficient f�r Magnus kraft 
-
+    Cl=0.17    # Koefficient f�r Magnus kraft 
     omega=np.array([0 , -8.9 , 0]) # Rotationsmomentetvektor.
+    
     
     
     # Tillst�ndsvektorn �r S=[ P ; V ], d�r P �r position och
@@ -42,6 +42,9 @@ def BollODE( S , t ):
     
     Fl=np.array([0 , 0 ,  0])
     Fl = Cl * rho * A * (np.cross(omega, V ))
+
+    print(np.abs(omega)/2*np.pi) # varv per sekund.
+
     
     # Kraften ger nu accelerationen, eller derivatan 
     # av hastighetsvektorn enligt Newtons lag F=m*a.
@@ -74,7 +77,7 @@ def HittaRelevantaVarden( z ):
 # G�r kopior av denna f�r att l�sa de olika uppgifterna. 
 #
 P0=np.array([0,0,0])        # Utg�ngsposition
-V0=np.array([17.3,0,11.5])  # Utg�ngshastighet
+V0=np.array([17.32,0.45,11.51])  # Utg�ngshastighet
 S0=np.zeros(6)
 S0[0:3]=P0
 S0[3:6]=V0                  # Starttillst�ndet

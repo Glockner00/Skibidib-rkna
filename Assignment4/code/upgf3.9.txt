@@ -1,0 +1,2 @@
+Några saker som skulle kunna påverka den fysikaliska modellen som inte är med 
+i koden skulle kunna vara: luftfuktighet, densitet på bollen, vind, tryck och så vidare.

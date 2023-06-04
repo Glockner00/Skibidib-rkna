@@ -1,3 +1,3 @@
 Bollen landar vid x=38.92559648975392 och y=0.0 [m]
-omega=np.array([0 , -8.9 , 0]) # Rotationsmomentetvektor.
+Womega=np.array([0 , -8.9 , 0]) # Rotationsmomentetvektor.
 Fl = Cl * rho * A * (np.cross(omega, V ))

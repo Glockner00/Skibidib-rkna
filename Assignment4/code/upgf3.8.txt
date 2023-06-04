@@ -1,0 +1,11 @@
+Cl = 0.16
+Bollen landar vid x=38.955071062095804 och y=1.0849456451968549 [m]
+
+Cl = 0.15
+Bollen landar vid x=38.524064098596234 och y=1.0664665891451193 [m]
+
+Cl = 0.17
+Bollen landar vid x=39.36568339435268 och y=1.1034055842474306 [m]
+
+förändringar i x-led: 0.4 per 0.01 i Cl.
+förändringar i y-led: 0.0002 per 0.01 i Cl.

@@ -1,42 +1,25 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-n = 5
-x = np.linspace(1, 2, 1000)
-
 def ApproxArctan(x):
-    y = np.arctan(x)
-    return y
+    n = 5
+    h = 1/(n-1)
 
-def y_vals():
-    vals = []
-    for k in xValues:
-        vals.append(ApproxArctan(k))
-    return vals
+    x_vec = np.linspace(1-h, 2+h, n+2)
+    y_vec = np.arctan(x_vec)
 
-def x_vals():
-    vals = []
-    for k in range(0, n+1):
-        x_k = 1 + (k-1)/ (n-1)
-        vals.append(x_k)
-    return vals
+    a = np.searchsorted(x_vec, x) - 1
 
-xValues = x_vals()
-yValues = y_vals()
+    k = (y_vec[a+1] - y_vec[a]) / (x_vec[a+1] - y_vec[a])
+    m = y_vec[a] - k * x_vec[a]
 
-p1 = np.polyfit(xValues, yValues, deg=1)
-p1_vals = np.polyval(p1, x)
+    Approx = k*x + m
+    return Approx
 
-p_new = np.interp(x, xValues, yValues)
+x = np.linspace(1, 2, 1000)
+abs_err = np.abs(ApproxArctan(x)-np.arctan(x))
+print(ApproxArctan(1.49))
+print(np.arctan(1.49))
 
-plt.plot(xValues, yValues)
-plt.plot(x,p1_vals)
+plt.plot(x, abs_err)
 plt.show()
-
-plt.plot(x, abs(p1_vals-p_new))
-plt.show()
-
-error = abs(p1_vals-p_new)
-print(error.max())
-
-# max error : 0.032780538535944315

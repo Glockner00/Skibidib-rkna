@@ -1,32 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-n = 100
-x = np.linspace(1-1/(n-1), 2+1/(n-1), n+2)
+import numpy as np
+import matplotlib.pyplot as pp
+import math
+
 
 def ApproxArctan(x):
-    y = np.arctan(x)
-    return y
+    n = 100 #interpolationspunkter
+    h = 1/(n-1) 
+    x_vec = np.linspace(1-h, 2+h, n+2) # skapar interpolationspunkter som en vektor.
+    y_vec = np.arctan(x_vec) # y vektorn
+    a = np.searchsorted(x_vec, x) -1 
+    k = (y_vec[a+1] - y_vec[a]) / (x_vec[a+1] - y_vec[a]) 
+    m = y_vec[a] - k*x_vec[a] 
+    Approx = k*x + m
+    return Approx
 
-def y_vals():
-    vals = []
-    for k in xValues:
-        vals.append(ApproxArctan(k))
-    return vals
+print("Approx: ",ApproxArctan(1.49))
+print("Numpy approx: ",np.arctan(1.49))
 
-def x_vals():
-    vals = []
-    for k in range(0, n+1):
-        x_k = 1 + (k-1)/(n-1)
-        vals.append(x_k)
-    return vals
+"""
+utskrift.
+0.9781301906312261 - vår approximation.
+0.9797025429849916 - numpys aproximation.
 
-xValues = x_vals()
-yValues = y_vals()
-
-p1 = np.polyfit(xValues, yValues, deg=1)
-p1_vals = np.polyval(p1, x)
-
-plt.plot(xValues, yValues)
-plt.plot(x,p1_vals)
-plt.show()
+"""

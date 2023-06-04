@@ -18,9 +18,11 @@ def ApproxArctan(x):
     f1 = np.polyfit(xk, yk, 3)
     return np.polyval(f1, x)
 
-result = [(abs(ApproxArctan(i)-np.arctan(i))) for i in x]
+#ap = [ApproxArctan(i) for i in x]
+ap1 = [np.arctan(i) for i in x]
+print(ap1)
 
-print(ApproxArctan(i) for i in x)
+result = [(abs(ApproxArctan(i)-np.arctan(i))) for i in x]
 plt.plot(x, result)
 plt.show()
 

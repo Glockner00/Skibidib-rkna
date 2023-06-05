@@ -1,1 +1,0 @@
-Denna uträkning görs i bollbana.py och den ger s = 14 varv/sekund.

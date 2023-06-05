@@ -24,4 +24,4 @@ def rk(t, f, y0):
 result = rk(t, funk, y0)
 y_1 = result[-1]  # y(1) vid t = 1
 
-print(f"y(1) ≈ {y_1}")
+print(f"y(1) = {y_1}")

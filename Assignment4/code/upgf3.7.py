@@ -1,3 +1,5 @@
+#Denna uträkning görs i bollbana.py och den ger s = 14 varv/sekund.
+
 # Fil f�r simulering av bollr�relse. P� slutet finns �ven ett exempel d�r en straffspark simuleras.
 import numpy as np
 import matplotlib.pyplot as pp

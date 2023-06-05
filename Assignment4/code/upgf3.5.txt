@@ -1,2 +1,0 @@
-Bollen landar vid x=23.482164175508313 och y=0.0 [m]
-Cd = 0.3855

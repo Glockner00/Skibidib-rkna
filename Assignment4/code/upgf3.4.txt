@@ -1,7 +1,0 @@
-"Bollen landar vid x=30.29998206346866 och y=0.0 [m]". Alltså landar
-bollen cirka 10.3 meter tidigare om man tar hänsyn till att det också 
-finns luftmotstånd.
-
-Se rad 36 i BollBana.py för utträkning av luftmotstånd.
-
-Fd= -1/2 * rho *  A * Cd * np.sqrt(S[3]**2 + S[4]**2 + S[5]**2) * V

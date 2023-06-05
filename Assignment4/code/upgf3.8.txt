@@ -9,3 +9,5 @@ Bollen landar vid x=39.36568339435268 och y=1.1034055842474306 [m]
 
 förändringar i x-led: 0.4 per 0.01 i Cl.
 förändringar i y-led: 0.0002 per 0.01 i Cl.
+
+Detta är bara instoppat i koden du gett oss!

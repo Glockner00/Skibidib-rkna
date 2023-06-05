@@ -1,4 +1,0 @@
-vi kan verifiera med utreslutatet att vår tidigare utträkning stämmer
-då vår vektor blev (40.5, 0, 0) och utskriften blev "Bollen landar 
-vid x=40.563126252505 och y=0.0 [m]". Detta kan vi även verifiera med
-hjälp av grafen.

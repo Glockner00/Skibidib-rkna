@@ -1,4 +1,11 @@
+"""
+Bollen landar vid x=23.482164175508313 och y=0.0 [m]
+Cd = 0.3855
+"""
+
+
 # Fil f�r simulering av bollr�relse. P� slutet finns �ven ett exempel d�r en straffspark simuleras.
+
 import numpy as np
 import matplotlib.pyplot as pp
 from mpl_toolkits import mplot3d
@@ -14,12 +21,10 @@ def BollODE( S , t ):
     r=0.105    # Bollens Radie [m]
     rho=1.2    # Luftensdensitet [kg/m^3]
     A=0.0375   # Tv�rsnittsarean [m^2]
-    Cd=0.14    # Luftmotst�ndskoefficient.
-    Cl=0.14    # Koefficient f�r Magnus kraft 
-    omega=np.array([0 , -8.9 , 0]) # Rotationsmomentetvektor.
-    
-    
-    
+    Cd=0.3855    # Luftmotst�ndskoefficient.
+    Cl=0.16    # Koefficient f�r Magnus kraft 
+    omega=np.array([0 , -8.9 , 25]) # Rotationsmomentetvektor.
+     
     # Tillst�ndsvektorn �r S=[ P ; V ], d�r P �r position och
     # V �r hastigheten. Notera fullst�ndigt vansinniga indexeringen.
     P=S[0:3]
@@ -36,14 +41,11 @@ def BollODE( S , t ):
   
     Fd=np.array([0 , 0 ,  0])
     Fd= -1/2 * rho *  A * Cd * np.sqrt(S[3]**2 + S[4]**2 + S[5]**2) * V
-
+    
     # Slutligen ber�knas Magnuskraften. H�r skall np.cross() anv�ndas
     # f�r att ber�kna vektorprodukten.
     
     Fl=np.array([0 , 0 ,  0])
-    Fl = Cl * rho * A * (np.cross(omega, V ))
-    print(np.abs(omega)/2*np.pi) # varv per sekund.
-
     
     # Kraften ger nu accelerationen, eller derivatan 
     # av hastighetsvektorn enligt Newtons lag F=m*a.
@@ -81,7 +83,7 @@ S0=np.zeros(6)
 S0[0:3]=P0
 S0[3:6]=V0                  # Starttillst�ndet
 
-n=500                       # Vi s�ker l�sningen i intervallet 0<t<5 [s]. 
+n=500                        # Vi s�ker l�sningen i intervallet 0<t<5 [s]. 
 t=np.linspace(0,5,n)
 
 BollBanan = odeint(BollODE, S0, t ) # Ber�knar nu l�sningen. Varje rad blir 
@@ -109,17 +111,18 @@ pp.show()
 #
 #  
 #  // Fysikaliska parametrar
-#  m=0.3056;                           # Bollens massa [kg]
-#  r=0.105;                            # Bollens Radie [m]
-#  g=9.81;                             # Tyngdkraftsaccelerationen [m/s^2]
-#  rho=1.2;                            # Luftensdensitet [kg/m^3]
-#  A=0.0375;                           # Tv�rsnittsarean [m^2]
-#  Cd=0.14;                            # Luftmotst�ndskoefficient.
-#  Cl=0.16;                            # Koefficient f�r Magnus kraft 
-#  omega=np.array([0 , -8.9 , 0])      # Rotationsmomentetvektor.
-#  V0=np.array([35.4 , -14.9 ,  4.13]) # Utg�ngshastighet
+#  m=0.3056;                          # Bollens massa [kg]
+#  r=0.105;                           # Bollens Radie [m]
+#  g=9.81;                            # Tyngdkraftsaccelerationen [m/s^2]
+#  rho=1.2;                           # Luftensdensitet [kg/m^3]
+#  A=0.0375;                          # Tv�rsnittsarean [m^2]
+#  Cd=0.14;                           # Luftmotst�ndskoefficient.
+#  Cl=0.16;                           # Koefficient f�r Magnus kraft 
+#  omega=np.array([0 , -8.9 , 0])    # Rotationsmomentetvektor.
+# V0=np.array([35.4 , -14.9 ,  4.13]) # Utg�ngshastighet
 
 #
 # H�r finns en kod-rad som ritar upp fotbollsm�let. Avdt�ndet till m�let
 # �r 35.4 meter.
 #
+
